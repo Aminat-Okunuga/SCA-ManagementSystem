@@ -6,6 +6,7 @@
  * Time: 5:15 PM
  */
 
+namespace Entity;
 class Mentor
 {
     public $mentor_id;
@@ -67,14 +68,6 @@ class Mentor
     public function setTrackId($track_id)
     {
         $this->track_id = $track_id;
-    }
-
-    public function getName() {
-        return $this->name;
-    }
-
-    public function setName($name) {
-        $this->name = $name;
     }
 
     public function getDateCreated()

@@ -5,7 +5,7 @@
  * Date: 10-Aug-20
  * Time: 5:15 PM
  */
-
+namespace Entity;
 class User
 {
     public $name;

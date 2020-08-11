@@ -6,6 +6,7 @@
  * Time: 5:15 PM
  */
 
+namespace Entity;
 class Comment
 {
     public $description;
