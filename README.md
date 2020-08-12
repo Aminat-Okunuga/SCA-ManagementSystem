@@ -3,47 +3,47 @@
 <h3>Track management</h3>
 <li>Create tracks</li>
 <li>View tracks</li>
-Edit tracks
-Delete tracks
+<li>Edit tracks</li>
+<li>Delete tracks</li>
 
 <h3>Cohort management</h3>
-Create cohort
-View cohort
-Edit cohort
-Delete cohort
+<li>Create cohort</li>
+<li>View cohort</li>
+<li>Edit cohort</li>
+<li>Delete cohort</li>
 
 <h3>Comment management</h3>
-Create comment
-View comment
-Edit comment
-Delete comment
+<li>Create comment</li>
+<li>View comment</li>
+E<li>dit comment</li>
+<li>Delete comment</li>
 
 <h3>User management</h3>
-Create user
-View user
-Edit user
-Delete user
+<li>Create user</li>
+<li>View user</li>
+<li>Edit user</li>
+<li>Delete user</li>
 
 <h3>Mentee management</h3>
-Create mentee
-View mentee
-Edit mentee
-Delete mentee
+<li>Create mentee</li>
+<li>View mentee</li>
+<li>Edit mentee</li>
+<li>Delete mentee</li>
 
 <h3>Mentor management</h3>
-Create mentor
-View mentor
-Edit mentor
-Delete mentor
-Selection of mentees
+<li>Create mentor</li>
+<li>View mentor</li>
+<li>Edit mentor</li>
+<li>Delete mentor</li>
+<li>Selection of mentees</li>
 
 
 <h3>FRONTEND</h3>
-Home
-Register
-Login
-Mentor Dashboard
-Mentee Dashboard
+<li>Home</li>
+<li>Register</li>
+<li>Login</li>
+<li>Mentor Dashboard</li>
+<li>Mentee Dashboard</li>
 
 
 
