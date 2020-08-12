@@ -22,6 +22,10 @@ include_once './process.php';
             <input type="text" name="name">
             </div>
             <div>
+            <label for="name">Level:</label>
+            <input type="text" name="level">
+            </div>
+            <div>
                 <input type="submit" name="create_track" value="Create">
             </div>
 
