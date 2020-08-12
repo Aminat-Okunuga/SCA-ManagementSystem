@@ -28,8 +28,8 @@ class Track
             throw new \Exception("Track name already exits");
         }
 //insert into db
-        $db->prepare("INSERT INTO TRACKS (name) VALUE (?)");
-        $db->result = $db->stmt->bind_param("s", $track->name);
+        $db->prepare("INSERT INTO TRACKS (name, level) VALUE (?,?)");
+        $db->result = $db->stmt->bind_param("ss", $track->name, $track->level);
         $db->execute();
 
         return $db->result;
