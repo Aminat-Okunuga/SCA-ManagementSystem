@@ -15,11 +15,9 @@ class User
     public $password;
     public $email;
     public $type;
-    public $date_created;
-    public $date_updated;
     public $status;
 
-    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $date_created, $date_updated, $status) {
+    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $status) {
         $this->name = $name;
         $this->username = $username;
         $this->fname = $fname;
@@ -27,8 +25,6 @@ class User
         $this->password = $password;
         $this->email = $email;
         $this->type = $type;
-        $this->date_created = $date_created;
-        $this->date_updated = $date_updated;
         $this->status = $status;
     }
 
@@ -40,122 +36,66 @@ class User
         $this->name = $name;
     }
 
-    public function getDateCreated()
-    {
-        return $this->date_created;
-    }
-
-    public function setDateCreated($date_created)
-    {
-        $this->date_created = $date_created;
-    }
-
-    public function getDateUpdated()
-    {
-        return $this->date_updated;
-    }
-
-    public function setDateUpdated($date_updated)
-    {
-        $this->date_updated = $date_updated;
-    }
-
     public function getStatus()
     {
         return $this->status;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUsername()
     {
         return $this->username;
     }
 
-    /**
-     * @param mixed $username
-     */
     public function setUsername($username)
     {
         $this->username = $username;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFname()
     {
         return $this->fname;
     }
 
-    /**
-     * @param mixed $fname
-     */
     public function setFname($fname)
     {
         $this->fname = $fname;
     }
 
-    /**
-     * @return mixed
-     */
     public function getLname()
     {
         return $this->lname;
     }
 
-    /**
-     * @param mixed $lname
-     */
     public function setLname($lname)
     {
         $this->lname = $lname;
     }
 
-    /**
-     * @return mixed
-     */
     public function getPassword()
     {
         return $this->password;
     }
 
-    /**
-     * @param mixed $password
-     */
     public function setPassword($password)
     {
         $this->password = $password;
     }
 
-    /**
-     * @return mixed
-     */
     public function getEmail()
     {
         return $this->email;
     }
 
-    /**
-     * @param mixed $email
-     */
     public function setEmail($email)
     {
         $this->email = $email;
     }
 
-    /**
-     * @return mixed
-     */
     public function getType()
     {
         return $this->type;
     }
 
-    /**
-     * @param mixed $type
-     */
     public function setType($type)
     {
         $this->type = $type;
