@@ -10,19 +10,19 @@ include_once './process.php';
 ?>
 <html>
 <head>
-    <title>Create | Cohort</title>
+    <title>Create | Comment</title>
 </head>
 <body>
-<h3>Create Cohort</h3>
+<h3>Create Comment</h3>
 <div class="container">
     <div>
-        <form action="../cohort/create.php" method="post">
+        <form action="../comment/create.php" method="post">
             <div>
             <label for="name">Name:</label>
             <input type="text" name="name">
             </div>
             <div>
-                <input type="submit" name="create_cohort" value="Create">
+                <input type="submit" name="create_comment" value="Create">
             </div>
 
         </form>

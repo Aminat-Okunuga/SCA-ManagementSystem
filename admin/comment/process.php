@@ -15,7 +15,7 @@ try {
     $error = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    if (!isset($_POST['create_cohort']) && $error == null) {
+    if (!isset($_POST['create_comment']) && $error == null) {
         throw new \Exception("Invalid request format,. please try again");
     }
 
@@ -26,13 +26,13 @@ try {
         throw new Exception($nameError);
     }
 
-    $cohort = new Entity\Cohort($name);
-    $result = controller\Cohort::create($cohort);
+    $comment = new Entity\Comment($name);
+    $result = controller\Comment::create($comment);
 
     if ($result !== true) {
-        throw new \Exception("Cohort creation failed");
+        throw new \Exception("Comment creation failed");
     }
-    $message = "Cohort created successfully";
+    $message = "Comment created successfully";
     echo $message;
 
 }
