@@ -15,9 +15,10 @@ class User
     public $password;
     public $email;
     public $type;
+    public $bio;
     public $status;
 
-    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $status) {
+    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $bio, $status) {
         $this->name = $name;
         $this->username = $username;
         $this->fname = $fname;
@@ -25,6 +26,7 @@ class User
         $this->password = $password;
         $this->email = $email;
         $this->type = $type;
+        $this->type = $bio;
         $this->status = $status;
     }
 
@@ -99,6 +101,16 @@ class User
     public function setType($type)
     {
         $this->type = $type;
+    }
+
+    public function getBio()
+    {
+        return $this->bio;
+    }
+
+    public function setBio($bio)
+    {
+        $this->bio = $bio;
     }
 
     public function setStatus($status)
