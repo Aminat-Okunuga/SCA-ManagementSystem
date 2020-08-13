@@ -15,29 +15,24 @@ try {
     $error = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    if (!isset($_POST['create_track']) && $error == null) {
+    if (!isset($_POST['create_cohort']) && $error == null) {
         throw new \Exception("Invalid request format,. please try again");
     }
 
     $name = isset($_POST['name']) ? Form::sanitise($_POST['name']) : null;
-    $level = isset($_POST['level']) ? Form::sanitise($_POST['level']) : null;
 
     $nameError = Validator::validateText('Name', $name, 30);
     if ($nameError != null) {
         throw new Exception($nameError);
     }
-    $levelError = Validator::validateText('Level', $level, 30);
-    if ($levelError != null) {
-        throw new Exception($levelError);
-    }
 
-    $track = new Entity\Track($name, $level);
-    $result = controller\Track::create($track);
+    $cohort = new Entity\Cohort($name);
+    $result = controller\Cohort::create($cohort);
 
     if ($result !== true) {
-        throw new \Exception("Track creation failed");
+        throw new \Exception("Cohort creation failed");
     }
-    $message = "Track created successfully";
+    $message = "Cohort created successfully";
     echo $message;
 
 }
