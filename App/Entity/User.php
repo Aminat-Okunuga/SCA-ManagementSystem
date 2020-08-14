@@ -8,7 +8,6 @@
 namespace Entity;
 class User
 {
-    public $name;
     public $username;
     public $fname;
     public $lname;
@@ -16,10 +15,10 @@ class User
     public $email;
     public $type;
     public $bio;
+    public $picture;
     public $status;
 
-    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $bio) {
-        $this->name = $name;
+    public function __construct($username, $fname, $lname, $password, $email, $type, $bio, $picture) {
         $this->username = $username;
         $this->fname = $fname;
         $this->lname = $lname;
@@ -27,6 +26,7 @@ class User
         $this->email = $email;
         $this->type = $type;
         $this->type = $bio;
+        $this->type = $picture;
     }
 
     public function getName() {
@@ -115,6 +115,16 @@ class User
     public function setStatus($status)
     {
         $this->status = $status;
+    }
+
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
     }
 
 }
