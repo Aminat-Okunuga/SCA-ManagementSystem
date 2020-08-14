@@ -26,6 +26,7 @@ try {
     $email = isset($_POST['email']) ? Form::sanitise($_POST['email']) : null;
     $type = isset($_POST['type']) ? Form::sanitise($_POST['type']) : null;
     $bio = isset($_POST['bio']) ? Form::sanitise($_POST['bio']) : null;
+    $picture = isset($_POST['picture']) ? Form::sanitise($_POST['picture']) : null;
 
     $fnameError = Validator::validateText('First Name', $fname, 30);
     if ($fnameError != null) {
@@ -42,16 +43,16 @@ try {
     }$emailError = Validator::validateText('Email', $email, 30);
     if ($emailError != null) {
         throw new Exception($emailError);
-    }$typeError = Validator::validateText('Name', $type, 30);
+    }$typeError = Validator::validateText('Type', $type, 30);
     if ($typeError != null) {
         throw new Exception($typeError);
-    }$bioError = Validator::validateText('Name', $bio, 30);
+    }$bioError = Validator::validateText('Bio', $bio, 30);
     if ($bioError != null) {
         throw new Exception($bioError);
     }
 
-    $user = new Entity\User($name, $username, $fname, $lname, $password, $email, $type, $bio);
-    $result = controller\Comment::create($user);
+    $user = new Entity\User($username, $fname, $lname, $password, $email, $type, $bio, $picture);
+    $result = controller\User::create($user);
 
     if ($result !== true) {
         throw new \Exception("User creation failed");

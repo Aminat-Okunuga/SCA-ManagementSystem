@@ -46,6 +46,9 @@ include_once './process.php';
                 <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
             </div>
             <div>
+                <input type="file" name="picture">
+            </div>
+            <div>
                 <input type="submit" name="create_user" value="Create">
             </div>
 
