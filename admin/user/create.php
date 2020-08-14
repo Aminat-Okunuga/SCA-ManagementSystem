@@ -39,7 +39,11 @@ include_once './process.php';
             </div>
             <div>
                 <label for="type">Type:</label>
-                <input type="text" name="type">
+                <select name="type" id="">
+                    <option value="">Select Type</option>
+                    <option value="mentor">Mentor</option>
+                    <option value="mentee">Mentee</option>
+                </select>
             </div>
 
             <div>
