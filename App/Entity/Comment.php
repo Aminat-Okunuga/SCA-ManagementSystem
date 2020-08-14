@@ -14,7 +14,7 @@ class Comment
     public $commentee_id;
     public $status;
 
-    public function __construct($description, $commentee_id, $commentor_id, $status) {
+    public function __construct($description, $commentee_id=1, $commentor_id=2, $status =1) {
         $this->description = $description;
         $this->commentee_id = $commentee_id;
         $this->commentor_id = $commentor_id;

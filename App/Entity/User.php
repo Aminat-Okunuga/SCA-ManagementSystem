@@ -18,7 +18,7 @@ class User
     public $bio;
     public $status;
 
-    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $bio, $status) {
+    public function __construct($name, $username, $fname, $lname, $password, $email, $type, $bio) {
         $this->name = $name;
         $this->username = $username;
         $this->fname = $fname;
@@ -27,7 +27,6 @@ class User
         $this->email = $email;
         $this->type = $type;
         $this->type = $bio;
-        $this->status = $status;
     }
 
     public function getName() {
