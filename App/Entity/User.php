@@ -29,17 +29,12 @@ class User
         $this->type = $picture;
     }
 
-    public function getName() {
-        return $this->name;
+    public function getFName() {
+        return $this->fname;
     }
 
-    public function setName($name) {
-        $this->name = $name;
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
+    public function setFName($fname) {
+        $this->fname = $fname;
     }
 
     public function getUsername()
@@ -50,16 +45,6 @@ class User
     public function setUsername($username)
     {
         $this->username = $username;
-    }
-
-    public function getFname()
-    {
-        return $this->fname;
-    }
-
-    public function setFname($fname)
-    {
-        $this->fname = $fname;
     }
 
     public function getLname()
@@ -110,6 +95,11 @@ class User
     public function setBio($bio)
     {
         $this->bio = $bio;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     public function setStatus($status)

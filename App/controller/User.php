@@ -7,7 +7,7 @@
  */
 
 namespace controller;
-
+use \Library\Database;
 
 class User
 {
@@ -16,10 +16,10 @@ class User
         $db = new Database();
         $db->connect();
 
-        $name = strtolower($user->name);
+        $fname = strtolower($user->fname);
 //check if user name exists
-        $db->prepare("SELECT id FROM USERS WHERE LOWER(name) = ?");
-        $db->result = $db->stmt->bind_param("s", $name);
+        $db->prepare("SELECT id FROM USERS WHERE LOWER(fname) = ?");
+        $db->result = $db->stmt->bind_param("s", $fname);
         $db->execute();
 
         $result = $db->stmt->get_result();
@@ -27,8 +27,8 @@ class User
             throw new \Exception("User name already exits");
         }
 //insert into db
-        $db->prepare("INSERT INTO USERS (name) VALUE (?)");
-        $db->result = $db->stmt->bind_param("s", $user->name);
+        $db->prepare("INSERT INTO USERS (username, fname, lname, password, email, user_type, bio, picture) VALUE (?,?,?,?,?,?,?,?)");
+        $db->result = $db->stmt->bind_param("ssssssss", $user->username, $user->fname, $user->lname, $user->password, $user->email, $user->type, $user->bio, $user->picture);
         $db->execute();
 
         return $db->result;
