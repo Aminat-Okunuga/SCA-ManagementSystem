@@ -31,9 +31,11 @@ try {
             </tr>
             </thead>
             <tbody>
-            <?php foreach($tracks as $track): ?>
+            <?php
+            $id = 0;
+            foreach($tracks as $track): ?>
                 <tr>
-                    <td><?= $track['id']?></td>
+                    <td><?= ++$id; ?></td>
                     <td><?= $track['name']?></td>
                     <td><?= $track['status']?></td>
                     <td><?= $track['date_created']?></td>

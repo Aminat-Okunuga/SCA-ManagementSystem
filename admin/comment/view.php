@@ -2,11 +2,11 @@
 
 include_once '../../autoload.php';
 
-$cohorts = array();
+$comments = array();
 $error = false;
 
 try {
-    $cohorts = Controller\Cohort::getAll();
+    $comments = Controller\Comment::getAll();
 } catch (\Exception $e) {
     $error = $e->getMessage();
     exit($error);
@@ -24,7 +24,7 @@ try {
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Comment</th>
                 <th>Status</th>
                 <th>Date</th>
                 <th></th>
@@ -33,14 +33,13 @@ try {
             <tbody>
             <?php
             $id = 0;
-            foreach($cohorts as $cohort): ?>
-
+            foreach($comments as $comment): ?>
                 <tr>
-                    <td><?= ++$id;?></td>
-                    <td><?= $cohort['name']?></td>
-                    <td><?= $cohort['status']?></td>
-                    <td><?= $cohort['date_created']?></td>
-                    <td><a href="edit.php?cohort_id=<?= $cohort['id']?>"><button>Edit</button></a></td>
+                    <td><?= ++$id; ?></td>
+                    <td><?= $comment['description']?></td>
+                    <td><?= $comment['status']?></td>
+                    <td><?= $comment['date_created']?></td>
+                    <td><a href="edit.php?comment_id=<?= $comment['id']?>"><button>Edit</button></a></td>
                 </tr>
             <?php endforeach ?>
             </tbody>

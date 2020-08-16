@@ -2,11 +2,11 @@
 
 include_once '../../autoload.php';
 
-$cohorts = array();
+$mentees = array();
 $error = false;
 
 try {
-    $cohorts = Controller\Cohort::getAll();
+    $mentees = Controller\Mentee::getAll();
 } catch (\Exception $e) {
     $error = $e->getMessage();
     exit($error);
@@ -25,6 +25,8 @@ try {
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Cohort</th>
+                <th>Track</th>
                 <th>Status</th>
                 <th>Date</th>
                 <th></th>
@@ -33,14 +35,17 @@ try {
             <tbody>
             <?php
             $id = 0;
-            foreach($cohorts as $cohort): ?>
+            foreach($mentees as $mentee): ?>
 
                 <tr>
                     <td><?= ++$id;?></td>
-                    <td><?= $cohort['name']?></td>
-                    <td><?= $cohort['status']?></td>
-                    <td><?= $cohort['date_created']?></td>
-                    <td><a href="edit.php?cohort_id=<?= $cohort['id']?>"><button>Edit</button></a></td>
+<!--                    <td>--><?//= $mentor['name']?><!--</td>-->
+                    <td>My Name</td>
+                    <td><?= $mentee['cohort_id']?></td>
+                    <td><?= $mentee['track_id']?></td>
+                    <td><?= $mentee['status']?></td>
+                    <td><?= $mentee['date_created']?></td>
+                    <td><a href="edit.php?mentee_id=<?= $mentee['id']?>"><button>Edit</button></a></td>
                 </tr>
             <?php endforeach ?>
             </tbody>

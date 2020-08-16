@@ -2,11 +2,11 @@
 
 include_once '../../autoload.php';
 
-$cohorts = array();
+$mentors = array();
 $error = false;
 
 try {
-    $cohorts = Controller\Cohort::getAll();
+    $mentors = Controller\Mentor::getAll();
 } catch (\Exception $e) {
     $error = $e->getMessage();
     exit($error);
@@ -25,6 +25,8 @@ try {
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Cohort</th>
+                <th>Track</th>
                 <th>Status</th>
                 <th>Date</th>
                 <th></th>
@@ -33,14 +35,17 @@ try {
             <tbody>
             <?php
             $id = 0;
-            foreach($cohorts as $cohort): ?>
+            foreach($mentors as $mentor): ?>
 
                 <tr>
                     <td><?= ++$id;?></td>
-                    <td><?= $cohort['name']?></td>
-                    <td><?= $cohort['status']?></td>
-                    <td><?= $cohort['date_created']?></td>
-                    <td><a href="edit.php?cohort_id=<?= $cohort['id']?>"><button>Edit</button></a></td>
+<!--                    <td>--><?//= $mentor['name']?><!--</td>-->
+                    <td>My Name</td>
+                    <td><?= $mentor['cohort_id']?></td>
+                    <td><?= $mentor['track_id']?></td>
+                    <td><?= $mentor['status']?></td>
+                    <td><?= $mentor['date_created']?></td>
+                    <td><a href="edit.php?mentor_id=<?= $mentor['id']?>"><button>Edit</button></a></td>
                 </tr>
             <?php endforeach ?>
             </tbody>

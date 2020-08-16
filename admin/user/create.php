@@ -35,7 +35,7 @@ include_once './process.php';
             </div>
             <div>
                 <label for="email">Email:</label>
-                <input type="eamil" name="email">
+                <input type="email" name="email">
             </div>
             <div>
                 <label for="type">Type:</label>
