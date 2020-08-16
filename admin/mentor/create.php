@@ -37,7 +37,8 @@ try {
                             <?php echo $cohort['name']; ?></option>
                     <?php endforeach ?>
                 </select>
-            </div> <div>
+            </div>
+            <div>
                 <label for="track">Track:</label>
                 <select name="track" id="">
                     <option value="">Select track</option>
@@ -46,7 +47,7 @@ try {
                             <?php echo $track['name']; ?></option>
                     <?php endforeach ?>
                 </select>
-            </div> <div>
+            </div>
             <div>
                 <input type="submit" name="create_mentor" value="Create">
             </div>

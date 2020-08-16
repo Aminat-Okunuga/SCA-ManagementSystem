@@ -20,18 +20,23 @@ try {
         }
 
         $name = isset($_POST['name']) ? Form::sanitise($_POST['name']) : null;
-        $cohort_id = isset($_POST['track_id']) ? Form::sanitise($_POST['track_id']) : null;
+        $level = isset($_POST['level']) ? Form::sanitise($_POST['level']) : null;
         $status = isset($_POST['status']) ? Form::sanitise($_POST['status']) : null;
 
         $nameError = Validator::validateText('Name', $name, 30);
         if ($nameError != null) {
             throw new Exception($nameError);
         }
+        $levelError = Validator::validateText('Level', $level, 30);
+        if ($levelError != null) {
+            throw new Exception($levelError);
+        }
 
-        $track = new Entity\Track($name);
+        $track = new Entity\Track($level, $name);
         $track->status = $status;
-        $track->track_id = $track_id;
-        $result = controller\Cohort::edit($track);
+//        $track->level = $level;
+        $track->track_id = $track;
+        $result = controller\Track::edit($track);
 
 
         if ($result !== true) {

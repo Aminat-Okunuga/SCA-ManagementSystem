@@ -39,7 +39,7 @@ try {
                     <td><?= $track['name']?></td>
                     <td><?= $track['status']?></td>
                     <td><?= $track['date_created']?></td>
-                    <td><a href="edit.php?cohort_id=<?= $track['id']?>"><button>Edit</button></a></td>
+                    <td><a href="edit.php?track_id=<?= $track['id']?>"><button>Edit</button></a></td>
                 </tr>
             <?php endforeach ?>
             </tbody>
