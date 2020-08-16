@@ -61,8 +61,8 @@ class Mentor
         $db = new Database();
         $db->connect();
 
-        $db->prepare("UPDATE MENTORS SET cohort_id = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
-        $db->result = $db->stmt->bind_param("iii", $mentor->cohort_id, $mentor->status, $mentor->id);
+        $db->prepare("UPDATE MENTORS SET cohort_id = ?, track_id = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
+        $db->result = $db->stmt->bind_param("iiii", $mentor->cohort_id, $mentor->track_id, $mentor->status, $mentor->id);
         $db->execute();
 
         return $db->result;

@@ -15,7 +15,7 @@ class Mentor
     public $track_id;
     public $status;
 
-    public function __construct($track_id, $cohort_id) {
+    public function __construct($cohort_id, $track_id) {
 //        $this->mentor_id = $mentor_id;
         $this->track_id = $track_id;
         $this->cohort_id = $cohort_id;

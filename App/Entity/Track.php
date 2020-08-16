@@ -12,7 +12,7 @@ class Track
     public $level;
     public $status;
 
-    public function __construct($name, $level) {
+    public function __construct($level, $name) {
         $this->name = $name;
         $this->level = $level;
     }

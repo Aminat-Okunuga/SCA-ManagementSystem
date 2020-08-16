@@ -62,8 +62,8 @@ class Track
         $db = new Database();
         $db->connect();
 
-        $db->prepare("UPDATE TRACKS SET name = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
-        $db->result = $db->stmt->bind_param("sii", $track->name, $track->status, $track->id);
+        $db->prepare("UPDATE TRACKS SET level = ?, name = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
+        $db->result = $db->stmt->bind_param("ssii", $track->name, $track->level, $track->status, $track->id);
         $db->execute();
 
         return $db->result;

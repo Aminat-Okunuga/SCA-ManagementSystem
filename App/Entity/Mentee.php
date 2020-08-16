@@ -15,7 +15,7 @@ class Mentee
     public $track_id;
     public $status;
 
-    public function __construct($track_id, $cohort_id, $mentor_id) {
+    public function __construct($cohort_id, $track_id,  $mentor_id) {
 //        $this->mentee_id = $mentee_id;
         $this->mentor_id = $mentor_id;
         $this->track_id = $track_id;
