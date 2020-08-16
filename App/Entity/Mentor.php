@@ -8,17 +8,17 @@
 
 namespace Entity;
 class Mentor
+
 {
     public $mentor_id;
     public $cohort_id;
     public $track_id;
     public $status;
 
-    public function __construct($mentor_id, $track_id, $cohort_id, $status) {
-        $this->mentor_id = $mentor_id;
+    public function __construct($track_id, $cohort_id) {
+//        $this->mentor_id = $mentor_id;
         $this->track_id = $track_id;
         $this->cohort_id = $cohort_id;
-        $this->status = $status;
     }
 
     public function getMentorId()

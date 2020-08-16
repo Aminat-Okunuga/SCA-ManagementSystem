@@ -13,20 +13,20 @@ class User
     public $lname;
     public $password;
     public $email;
-    public $type;
+    public $user_type;
     public $bio;
     public $picture;
     public $status;
 
-    public function __construct($username, $fname, $lname, $password, $email, $type, $bio, $picture) {
+    public function __construct($username, $fname, $lname, $password, $email, $user_type, $bio, $picture) {
         $this->username = $username;
         $this->fname = $fname;
         $this->lname = $lname;
         $this->password = $password;
         $this->email = $email;
-        $this->type = $type;
-        $this->type = $bio;
-        $this->type = $picture;
+        $this->user_type = $user_type;
+        $this->bio = $bio;
+        $this->picture = $picture;
     }
 
     public function getFName() {
@@ -77,14 +77,14 @@ class User
         $this->email = $email;
     }
 
-    public function getType()
+    public function getUserType()
     {
-        return $this->type;
+        return $this->user_type;
     }
 
-    public function setType($type)
+    public function setType($user_type)
     {
-        $this->type = $type;
+        $this->user_type = $user_type;
     }
 
     public function getBio()

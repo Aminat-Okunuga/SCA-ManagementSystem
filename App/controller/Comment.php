@@ -7,7 +7,7 @@
  */
 
 namespace controller;
-
+use \Library\Database;
 
 class Comment
 {

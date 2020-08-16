@@ -28,7 +28,7 @@ class User
         }
 //insert into db
         $db->prepare("INSERT INTO USERS (username, fname, lname, password, email, user_type, bio, picture) VALUE (?,?,?,?,?,?,?,?)");
-        $db->result = $db->stmt->bind_param("ssssssss", $user->username, $user->fname, $user->lname, $user->password, $user->email, $user->type, $user->bio, $user->picture);
+        $db->result = $db->stmt->bind_param("ssssssss", $user->username, $user->fname, $user->lname, $user->password, $user->email, $user->user_type, $user->bio, $user->picture);
         $db->execute();
 
         return $db->result;
