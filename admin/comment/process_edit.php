@@ -30,9 +30,7 @@ try {
 
         $comment = new Entity\Comment($description);
         $comment->status = $status;
-//        $comment->comment_id = $comment_id;
         $result = controller\Comment::edit($comment);
-
 
         if ($result !== true) {
             throw new \Exception("Comment creation failed");
