@@ -84,7 +84,7 @@ try {
             throw new Exception($bioError);
         }
 
-        $product = new Entity\User($username, $fname, $lname, $password, $email, $type, $bio, $picture);
+        $user = new Entity\User($username, $fname, $lname, $password, $email, $type, $bio, $picture);
 //        $user->status = $status;
         $user->user_id = $user_id;
         $result = Controller\User::edit($user);

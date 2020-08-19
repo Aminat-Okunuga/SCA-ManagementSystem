@@ -18,8 +18,8 @@ include_once './process.php';
     <div>
         <form action="../cohort/create.php" method="post">
             <div>
-            <label for="name">Name:</label>
-            <input type="text" name="name">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
             </div>
             <div>
                 <input type="submit" name="create_cohort" value="Create">

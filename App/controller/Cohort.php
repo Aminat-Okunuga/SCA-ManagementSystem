@@ -62,8 +62,10 @@ class Cohort
         $db = new Database();
         $db->connect();
 
+        $cohort_id = $cohort->id;
+
         $db->prepare("UPDATE COHORTS SET name = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
-        $db->result = $db->stmt->bind_param("sii", $cohort->name, $cohort->status, $cohort->id);
+        $db->result = $db->stmt->bind_param("sii", $cohort->name, $cohort->status, $cohort_id);
         $db->execute();
 
         return $db->result;

@@ -61,8 +61,8 @@ class User
         $db = new Database();
         $db->connect();
 
-        $db->prepare("UPDATE USERS SET name = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
-        $db->result = $db->stmt->bind_param("sii", $user->name, $user->status, $user->id);
+        $db->prepare("UPDATE USERS SET username = ?, fname = ?, lname = ?, password = ?, email = ?, user_type = ?, bio = ?, picture = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
+        $db->result = $db->stmt->bind_param("ssssssssi", $user->username, $user->fname, $user->lname, $user->password, $user->email, $user->user_type, $user->bio, $user->picture, $user->id);
         $db->execute();
 
         return $db->result;

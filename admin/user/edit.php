@@ -31,7 +31,6 @@ try {
 }
 
 ?>
-?>
 <html>
 <head>
     <title></title>

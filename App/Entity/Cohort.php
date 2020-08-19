@@ -11,6 +11,7 @@ class Cohort
 {
     public $name;
     public $status;
+    public $id;
 
     public function __construct($name) {
         $this->name = $name;
@@ -33,5 +34,11 @@ class Cohort
     {
         $this->status = $status;
     }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
 
 }

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HP
- * Date: 12-Aug-20
- * Time: 8:33 AM
- */
 include_once '../../autoload.php';
 
 use \Library\Form as Form;
