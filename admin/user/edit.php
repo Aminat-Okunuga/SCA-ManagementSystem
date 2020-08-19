@@ -78,7 +78,7 @@ try {
             </div>
             <input type="hidden" name="user_id" id="user_id" value="<?= $user_id ?>">
             <div>
-                <input type="submit" name="edit_user" value="Create">
+                <input type="submit" name="edit_user" value="Update">
             </div>
 
         </form>
