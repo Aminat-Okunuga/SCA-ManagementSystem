@@ -12,6 +12,8 @@ class Cohort
     public $name;
     public $status;
     public $id;
+    public $start_date;
+    public $end_date;
 
     public function __construct($name) {
         $this->name = $name;
@@ -40,5 +42,23 @@ class Cohort
         $this->id = $id;
     }
 
+ public function getStartDate()
+    {
+        return $this->start_date;
+    }
 
+    public function setStartDate($start_date)
+    {
+        $this->start_date = $start_date;
+    }
+
+public function getEndDate()
+    {
+        return $this->end_date;
+    }
+
+    public function setEndDate($end_date)
+    {
+        $this->end_date = $end_date;
+    }
 }

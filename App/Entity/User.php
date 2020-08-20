@@ -19,11 +19,10 @@ class User
     public $status;
     public $user_id;
 
-    public function __construct($username, $fname, $lname, $password, $email, $user_type, $bio, $picture) {
+    public function __construct($username, $fname, $lname, $email, $user_type, $bio, $picture) {
         $this->username = $username;
         $this->fname = $fname;
         $this->lname = $lname;
-        $this->password = $password;
         $this->email = $email;
         $this->user_type = $user_type;
         $this->bio = $bio;
@@ -56,16 +55,6 @@ class User
     public function setLname($lname)
     {
         $this->lname = $lname;
-    }
-
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    public function setPassword($password)
-    {
-        $this->password = $password;
     }
 
     public function getEmail()

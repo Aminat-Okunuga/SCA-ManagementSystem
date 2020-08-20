@@ -18,6 +18,8 @@ class Cohort
         $db->connect();
 
         $name = strtolower($cohort->name);
+        $start_date = $cohort->start_date;
+        $end_date = $cohort->end_date;
 //check if cohort name exists
         $db->prepare("SELECT id FROM COHORTS WHERE LOWER(name) = ?");
         $db->result = $db->stmt->bind_param("s", $name);
@@ -28,8 +30,8 @@ class Cohort
             throw new \Exception("Cohort name already exits");
         }
 //insert into db
-        $db->prepare("INSERT INTO cohorts (name) VALUE (?)");
-        $db->result = $db->stmt->bind_param("s", $cohort->name);
+        $db->prepare("INSERT INTO cohorts (name, start_date, end_date) VALUE (?,?,?)");
+        $db->result = $db->stmt->bind_param("sss", $cohort->name, $cohort->start_date, $cohort->end_date);
         $db->execute();
 
         return $db->result;
@@ -62,7 +64,7 @@ class Cohort
         $db = new Database();
         $db->connect();
 
-        $cohort_id = $cohort->id;
+        $cohort_id = $cohort->cohort_id;
 
         $db->prepare("UPDATE COHORTS SET name = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
         $db->result = $db->stmt->bind_param("sii", $cohort->name, $cohort->status, $cohort_id);

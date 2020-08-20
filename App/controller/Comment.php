@@ -62,7 +62,7 @@ class Comment
         $db->connect();
 
         $db->prepare("UPDATE COMMENTS SET description = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
-        $db->result = $db->stmt->bind_param("sii", $comment->description, $comment->status, $comment->id);
+        $db->result = $db->stmt->bind_param("sii", $comment->description, $comment->status, $comment->comment_id);
         $db->execute();
 
         return $db->result;
