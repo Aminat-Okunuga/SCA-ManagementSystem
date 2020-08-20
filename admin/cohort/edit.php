@@ -36,7 +36,7 @@ if ($cohortError !=null){
 <h3>Edit Cohort</h3>
 <div class="container">
     <div>
-        <form action="../cohort/edit.php?cohort_id=<?= $cohort_id?>" method="post">
+        <form action="../cohort/edit.php?cohort_id=<?= $cohort_id?>" method="POST">
             <div>
             <label for="name">Name:</label>
             <input type="text" name="name" value="<?= $cohort['name'];?>">

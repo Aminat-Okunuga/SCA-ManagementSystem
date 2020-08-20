@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HP
- * Date: 12-Aug-20
- * Time: 8:16 AM
- */
 include_once '../../autoload.php';
 include_once './process_edit.php';
 
@@ -54,8 +48,8 @@ if ($trackError !=null){
                 <label for="level">Level</label>
                 <select name="level" id="level">
                     <option value="">Select a level</option>
-                    <option <?= $track['level'] == 1 ? 'selected' : '' ?> value="1"><?=$track['level']?></option>
-                    <option <?= $track['level'] == 2 ? 'selected' : '' ?> value="2">Inactive</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
                 </select>
             </div>
             <input type="hidden" name="track_id" id="track_id" value="<?= $track_id ?>">

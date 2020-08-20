@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HP
- * Date: 12-Aug-20
- * Time: 8:33 AM
- */
 include_once '../../autoload.php';
 
 use \Library\Form as Form;
@@ -53,9 +47,9 @@ try {
 
 
         $username = isset($_POST['username']) ? Form::sanitise($_POST['username']) : null;
+        $user_id = isset($_POST['user_id']) ? Form::sanitise($_POST['user_id']) : null;              
         $fname = isset($_POST['fname']) ? Form::sanitise($_POST['fname']) : null;
         $lname = isset($_POST['lname']) ? Form::sanitise($_POST['lname']) : null;
-        $password = isset($_POST['password']) ? Form::sanitise($_POST['password']) : null;
         $email = isset($_POST['email']) ? Form::sanitise($_POST['email']) : null;
         $type = isset($_POST['type']) ? Form::sanitise($_POST['type']) : null;
         $bio = isset($_POST['bio']) ? Form::sanitise($_POST['bio']) : null;
@@ -70,9 +64,6 @@ try {
         }$usernameError = Validator::validateText('Username', $username, 30);
         if ($usernameError != null) {
             throw new Exception($usernameError);
-        }$passwordError = Validator::validateText('Password', $password, 30);
-        if ($passwordError != null) {
-            throw new Exception($passwordError);
         }$emailError = Validator::validateText('Email', $email, 30);
         if ($emailError != null) {
             throw new Exception($emailError);
@@ -84,7 +75,7 @@ try {
             throw new Exception($bioError);
         }
 
-        $user = new Entity\User($username, $fname, $lname, $password, $email, $type, $bio, $picture);
+        $user = new Entity\User($username, $fname, $lname, $email, $type, $bio, $picture);
 //        $user->status = $status;
         $user->user_id = $user_id;
         $result = Controller\User::edit($user);

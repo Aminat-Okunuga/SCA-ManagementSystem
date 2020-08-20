@@ -53,10 +53,6 @@ try {
                 <input type="text" name="lname" value="<?= $user['lname'] ?>">
             </div>
             <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" value="<?= $user['password'] ?>">
-            </div>
-            <div>
                 <label for="email">Email:</label>
                 <input type="email" name="email" value="<?= $user['email'] ?>">
             </div>
@@ -64,8 +60,8 @@ try {
                 <label for="type">Type:</label>
                 <select name="type" id="">
                     <option value="">Select Type</option>
-                    <option value="<?= $user['user_type'] ?>"><?= $user['user_type'] ?></option>
-                    <option value="<?= $user['user_type'] ?>"><?= $user['user_type'] ?></option>
+                    <option value="mentor">Mentor</option>
+                    <option value="mentee">Mentee</option>
                 </select>
             </div>
 

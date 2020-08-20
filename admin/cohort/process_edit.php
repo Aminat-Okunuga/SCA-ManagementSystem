@@ -23,6 +23,7 @@ try {
         }
 
         $cohort = new Entity\Cohort($name);
+        var_dump(($cohort));
         $cohort->status = $status;
         $cohort->cohort_id = $cohort_id;
         $result = controller\Cohort::edit($cohort);

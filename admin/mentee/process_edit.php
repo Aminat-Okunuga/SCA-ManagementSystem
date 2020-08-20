@@ -21,6 +21,7 @@ try {
 
         $cohort = isset($_POST['cohort']) ? Form::sanitise($_POST['cohort']) : null;
         $mentor_id = isset($_POST['mentor']) ? Form::sanitise($_POST['mentor']) : null;
+        $mentee_id = isset($_POST['mentee_id']) ? Form::sanitise($_POST['mentee_id']) : null;
         $track = isset($_POST['track']) ? Form::sanitise($_POST['track']) : null;
         $status = isset($_POST['status']) ? Form::sanitise($_POST['status']) : null;
 
@@ -37,6 +38,7 @@ try {
         $mentee->status = $status;
 //        $track->level = $level;
         $mentee->track_id = $track;
+        $mentee->mentee_id = $mentee_id;
         $result = controller\Mentee::edit($mentee);
 
 

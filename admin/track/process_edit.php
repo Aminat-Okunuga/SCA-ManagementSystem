@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HP
- * Date: 12-Aug-20
- * Time: 8:33 AM
- */
 include_once '../../autoload.php';
 
 use \Library\Form as Form;
@@ -21,6 +15,7 @@ try {
 
         $name = isset($_POST['name']) ? Form::sanitise($_POST['name']) : null;
         $level = isset($_POST['level']) ? Form::sanitise($_POST['level']) : null;
+        $track_id = isset($_POST['track_id']) ? Form::sanitise($_POST['track_id']) : null;
         $status = isset($_POST['status']) ? Form::sanitise($_POST['status']) : null;
 
         $nameError = Validator::validateText('Name', $name, 30);
@@ -34,8 +29,8 @@ try {
 
         $track = new Entity\Track($level, $name);
         $track->status = $status;
-//        $track->level = $level;
-        $track->track_id = $track;
+       $track->level = $level;
+        $track->track_id = $track_id;
         $result = controller\Track::edit($track);
 
 
