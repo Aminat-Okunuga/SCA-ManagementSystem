@@ -58,7 +58,8 @@ if ($menteeError !=null){
                 <label for="track">Track:</label>
                 <select name="track" id="">
                     <option value="">Select track</option>
-                    <option <?= $mentee['track_id'] == 1 ? 'selected' : '' ?> value="1"><?=$mentee['track_id']?></option>
+                    <!-- <option <?= $mentee['track_id'] == 1 ? 'selected' : '' ?> value="1"><?=$mentee['track_id']?></option> -->
+                     <option <?= $mentee['track_id'] == 1 ? 'selected' : '' ?> value="1">Active</option>
                     <option <?= $mentee['track_id'] == 2 ? 'selected' : '' ?> value="2">Inactive</option>
                 </select>
             </div>

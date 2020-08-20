@@ -41,7 +41,7 @@ include_once './process.php';
                 <label for="type">Type:</label>
                 <select name="type" id="">
                     <option value="">Select Type</option>
-                    <option value="mentor">Mentor</option>
+                    <option value="<?= $user['user_type']?>">Mentor</option>
                     <option value="mentee">Mentee</option>
                 </select>
             </div>
