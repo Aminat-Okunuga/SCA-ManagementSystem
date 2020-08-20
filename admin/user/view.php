@@ -27,7 +27,7 @@ try {
                 <th>User Name</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>User Type/th>
+                <th>User Type</th>
                 <th>Bio</th>
                 <th>Picture</th>
                 <th>Status</th>
