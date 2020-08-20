@@ -62,8 +62,8 @@ class Mentee
         $db = new Database();
         $db->connect();
 
-        $db->prepare("UPDATE MENTEES SET cohort_id = ?, track_id = ?, mentor_id = ?, status = ?, date_updated = current_timestamp WHERE ID = ?");
-        $db->result = $db->stmt->bind_param("iiiii", $mentee->cohort_id, $mentee->track_id, $mentee->mentor_id, $mentee->status, $mentee->mentee_id);
+        $db->prepare("UPDATE MENTEES SET cohort_id = ?, track_id = ?, mentor_id = ?, date_updated = current_timestamp WHERE ID = ?");
+        $db->result = $db->stmt->bind_param("iiii", $mentee->cohort_id, $mentee->track_id, $mentee->mentor_id, $mentee->mentee_id);
         $db->execute();
 
         return $db->result;
