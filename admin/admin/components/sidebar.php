@@ -8,19 +8,19 @@
                             <a href="index.php" class="waves-effect"><i class="fa fa-clock-o m-r-10" aria-hidden="true"></i>Dashboard</a>
                         </li>
                         <li>
-                        <a href="table-basic.html" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Mentor</a>
+                        <a href="view-mentors.php" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Mentor</a>
                         </li>
                         <li>
-                        <a href="table-basic.html" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i> Mentee</a>
+                        <a href="view-mentees.php" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i> Mentee</a>
                         </li>
                         <li>
-                        <a href="table-basic.html" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Cohort</a>
+                        <a href="view-cohorts.php" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Cohort</a>
                         </li>
                         <li>
-                            <a href="icon-fontawesome.html" class="waves-effect"><i class="fa fa-font m-r-10" aria-hidden="true"></i>Track</a>
+                            <a href="view-tracks.php" class="waves-effect"><i class="fa fa-font m-r-10" aria-hidden="true"></i>Track</a>
                         </li>
                         <li>
-                            <a href="map-google.html" class="waves-effect"><i class="fa fa-globe m-r-10" aria-hidden="true"></i>Comment</a>
+                            <a href="view-comments.php" class="waves-effect"><i class="fa fa-globe m-r-10" aria-hidden="true"></i>Comment</a>
                         </li>
                         
                     </ul>
