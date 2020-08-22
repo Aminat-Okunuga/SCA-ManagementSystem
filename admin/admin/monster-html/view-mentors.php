@@ -41,8 +41,8 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Basic Table</h4>
-                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
+                                <h4 class="card-title">Mentor</h4>
+                                <h6 class="card-subtitle">All Mentors</h6>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
