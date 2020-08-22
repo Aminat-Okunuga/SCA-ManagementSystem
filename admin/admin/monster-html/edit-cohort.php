@@ -1,9 +1,29 @@
 <?php 
 include_once '../components/header.php';
-?>
+include_once '../../autoload.php';
+include_once './process_edit.php';
 
-       
-        <?php include_once '../components/sidebar.php';?>
+use \Library\Form as Form;
+use \Library\Validator as Validator;
+$cohort = array();
+$error = false;
+try{
+$cohort_id = isset($_GET['cohort_id']) ? Form::sanitise($_GET['cohort_id']) :null;
+$cohortError = Validator::validateNumber('Cohort', $cohort_id);
+if ($cohortError !=null){
+    throw new \Exception($cohortError);
+}
+
+    $cohort = Controller\Cohort::get($cohort_id);
+    if($cohort == null) {
+        throw new \Exception("Cohort does not exist");
+    }
+
+}catch(\Exception $e){
+    $error = $e->getMessage();
+}
+
+include_once '../components/sidebar.php';?>
         
         <div class="page-wrapper">
             <div class="container-fluid">
@@ -29,62 +49,26 @@ include_once '../components/header.php';
                             <div class="card-block">
                                 <h4 class="card-title">Cohorts</h4>
                                 <h6 class="card-subtitle">All Cohorts</h6>
-                                <div class="table-responsive">
-                                <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td><a href="edit-cohort.php" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div >
+                                <form action="../cohort/edit.php?cohort_id=<?= $cohort_id?>" method="POST">
+                                    <div>
+                                    <label for="name">Name:</label>
+                                    <input type="text" name="name" value="<?= $cohort['name'];?>">
+                                    </div>
+                                    <div>
+                                        <label for="status">Status</label>
+                                        <select name="status" id="status">
+                                            <option value="">Select a status</option>
+                                            <option <?= $cohort['status'] == 1 ? 'selected' : '' ?> value="1">Active</option>
+                                            <option <?= $cohort['status'] == 2 ? 'selected' : '' ?> value="2">Inactive</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="cohort_id" id="cohort_id" value="<?= $cohort_id ?>">
+                                    <div>
+                                        <input type="submit" name="edit_cohort" value="Edit">
+                                    </div>
+
+                                </form>
                                 </div>
                             </div>
                         </div>
