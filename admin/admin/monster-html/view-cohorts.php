@@ -30,13 +30,14 @@ include_once '../components/header.php';
                                 <h4 class="card-title">Cohorts</h4>
                                 <h6 class="card-subtitle">All Cohorts</h6>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Username</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -45,36 +46,42 @@ include_once '../components/header.php';
                                                 <td>Deshmukh</td>
                                                 <td>Prohaska</td>
                                                 <td>@Genelia</td>
+                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Deshmukh</td>
                                                 <td>Gaylord</td>
                                                 <td>@Ritesh</td>
+                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Sanghani</td>
                                                 <td>Gusikowski</td>
                                                 <td>@Govinda</td>
+                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td>Roshan</td>
                                                 <td>Rogahn</td>
                                                 <td>@Hritik</td>
+                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
                                                 <td>Joshi</td>
                                                 <td>Hickle</td>
                                                 <td>@Maruti</td>
+                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
                                                 <td>Nigam</td>
                                                 <td>Eichmann</td>
                                                 <td>@Sonu</td>
+                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
                                             </tr>
                                         </tbody>
                                     </table>
