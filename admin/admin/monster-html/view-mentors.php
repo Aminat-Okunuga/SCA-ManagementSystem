@@ -1,4 +1,4 @@
-<?php include'../components/header.php';?>
+<?php include_once '../components/header.php';?>
 
         <!-- ============================================================== -->
         <!-- End Topbar header -->
@@ -6,7 +6,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <?php include'../components/sidebar.php';?>
+        <?php include_once '../components/sidebar.php';?>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -107,7 +107,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include'../components/footer.php';?>
+            <?php include_once '../components/footer.php';?>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -133,13 +133,13 @@
     <!--Menu sidebar -->
     <script src="js/sidebarmenu.js"></script>
     <!--stickey kit -->
-    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="../../../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="../../../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

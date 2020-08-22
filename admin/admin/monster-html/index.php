@@ -1,4 +1,4 @@
-<?php include'../components/header.php';?>
+<?php include '../components/header.php';?>
 
         <!-- ============================================================== -->
         <!-- End Topbar header -->
@@ -11,7 +11,7 @@
             
             <!-- End Sidebar scroll-->
         <!-- </aside>  -->
-        <?php include'../components/sidebar.php'?>
+        <?php include '../components/sidebar.php'?>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -145,7 +145,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include'../components/footer.php';?>
+            <?php include '../components/footer.php';?>
 
             <!-- ============================================================== -->
             <!-- End footer -->
