@@ -1,10 +1,10 @@
 <?php
 include_once '../autoload.php';
-$mentors = array();
+$users = array();
 $error = false;
 
 try {
-    $mentors = Controller\Mentor::getAll();
+    $mentors = Controller\User::getAll();
 } catch (\Exception $e) {
     $error = $e->getMessage();
     exit($error);
@@ -104,7 +104,7 @@ try {
         <tbody>
         <?php
         $id = 0;
-        foreach($mentors as $mentor): ?>
+        foreach($users as $user): ?>
 
             <tr>
                 <td><?= ++$id;?></td>
@@ -114,8 +114,7 @@ try {
                 <td><?= $mentor['track_id']?></td>
                 <td><?= $mentor['status']?></td>
                 <td><?= $mentor['date_created']?></td>
-                <!-- <td><a href="edit.php?mentee_id=<?= $mentee['id']?>"><button>Edit</button></a></td> -->
-            </tr>
+                 </tr>
         <?php endforeach ?>
         </tbody>
     </table>
@@ -128,9 +127,10 @@ try {
             <div class="pt-5">
               <h3 class="mb-5">6 Comments</h3>
               <ul class="comment-list">
+                <?php foreach($users as $user):?>
                 <li class="comment">
                   <div class="vcard bio">
-                    <img src="images/person_2.jpg" alt="Image">
+                    <img src="<?php echo $user['picture'];?>" alt="Image">
                   </div>
                   <div class="comment-body">
                     <h3>Jacob Smith</h3>
@@ -139,6 +139,7 @@ try {
                     <p><a href="#" class="reply">Read More</a></p>
                   </div>
                 </li>
+                <?php endforeach?>
 
                 <li class="comment">
                   <div class="vcard bio">
@@ -151,48 +152,6 @@ try {
                     <p><a href="#" class="reply">Read More</a></p>
                   </div>
 
-                  <!-- <ul class="children">
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="images/person_5.jpg" alt="Image">
-                      </div>
-                      <div class="comment-body">
-                        <h3>Chintan Patel</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <p><a href="#" class="reply">Reply</a></p>
-                      </div>
-
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image">
-                          </div>
-                          <div class="comment-body">
-                            <h3>Jean Doe</h3>
-                            <div class="meta">January 9, 2018 at 2:21pm</div>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                            <p><a href="#" class="reply">Reply</a></p>
-                          </div>
-
-                            <ul class="children">
-                              <li class="comment">
-                                <div class="vcard bio">
-                                  <img src="images/person_4.jpg" alt="Image">
-                                </div>
-                                <div class="comment-body">
-                                  <h3>Ben Afflick</h3>
-                                  <div class="meta">January 9, 2018 at 2:21pm</div>
-                                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                  <p><a href="#" class="reply">Reply</a></p>
-                                </div>
-                              </li>
-                            </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul> -->
                 </li>
 
                 <li class="comment">

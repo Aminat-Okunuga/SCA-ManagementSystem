@@ -113,8 +113,7 @@ try {
                     <td><?= $mentee['track_id']?></td>
                     <td><?= $mentee['status']?></td>
                     <td><?= $mentee['date_created']?></td>
-                    <!-- <td><a href="edit.php?mentee_id=<?= $mentee['id']?>"><button>Edit</button></a></td> -->
-                </tr>
+                 </tr>
             <?php endforeach ?>
             </tbody>
         </table>
