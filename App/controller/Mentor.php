@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HP
- * Date: 11-Aug-20
- * Time: 9:05 PM
- */
-
 namespace controller;
 
 use \Library\Database;
@@ -39,9 +32,10 @@ class Mentor
         $db = new Database();
         $db->connect();
 
-        $mentors = $db->select("SELECT * FROM MENTORS ORDER BY ID DESC");
-        return $mentors;
+        $mentees = $db->select("SELECT MENTORS.*,  USERS.FNAME AS f_name, USERS.LNAME AS l_name, USERS.PICTURE AS picture, COHORTS.NAME AS cohort_name, TRACKS.NAME AS track_name FROM MENTORS JOIN USERS ON USERS.ID = MENTORS.ID JOIN COHORTS ON COHORTS.ID = MENTORS.COHORT_ID JOIN TRACKS ON TRACKS.ID = MENTORS.TRACK_ID ORDER BY MENTORS.ID DESC LIMIT 2");
+        return $mentees;
     }
+
 
     public static function get($mentor_id) {
         $db = new Database();

@@ -18,7 +18,37 @@ try {
         if (!isset($_POST['create_user']) && $error == null) {
             throw new \Exception("Invalid request format,. please try again");
         }
-
+        if(!isset($_FILES['picture'])) {
+            throw new \Exception("No picture uploaded");
+        }
+    
+        if($_FILES['picture']['error'] == 1) {
+            throw new \Exception("File size must be less than 2 MB");
+        }
+    
+        if($_FILES['picture']['error'] != 0) {
+            throw new \Exception("Please select a picture and try again");
+        }
+    
+        if(!file_exists($_FILES['picture']['tmp_name'])) {
+            throw new \Exception("Please select a picture and try again");
+        }
+    
+        $uploaded_file = pathinfo($_FILES['picture']['name']);
+        $valid_extensions = array('jpg', 'jpeg', 'png');
+    
+        if(!in_array($uploaded_file['extension'], $valid_extensions)) {
+            throw new \Exception("Please select a valid picture");
+        }
+    
+        $relative_dest = "frontend/images" . $_FILES['picture']['name'];
+    
+        $dest = __DIR__ . "/../$relative_dest";
+    
+        if (!move_uploaded_file($_FILES['picture']['tmp_name'], $dest)) {
+            echo 'File upload failed';
+        }
+    
         $username = isset($_POST['username']) ? Form::sanitise($_POST['username']) : null;
         $fname = isset($_POST['fname']) ? Form::sanitise($_POST['fname']) : null;
         $lname = isset($_POST['lname']) ? Form::sanitise($_POST['lname']) : null;

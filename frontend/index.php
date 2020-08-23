@@ -47,8 +47,6 @@
     </div>  
 
 
-    
-
   <div class="site-section" id="about-section">
       <div class="container">
         <div class="row mb-5">
@@ -66,7 +64,7 @@
                 </div>
               </div>
               <div class="col-12 mb-4">
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt magnam corrupti, odit eos harum quaerat nostrum voluptatibus aspernatur eligendi accusantium cum, impedit blanditiis voluptate commodi doloribus, nemo dignissimos recusandae.</p>
+                <p class="lead">We help in empowering female in becoming a world-class technological person.</p>
               </div>
              
             </div>
@@ -88,12 +86,12 @@
             <div class="testimonial">
               
               <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+                <p>&ldquo;I stumbled on the SCA mentorship program and thought it wise to apply for it. Foortunately for me, I got admitted into the program, and now, I am a confident female software engineer&rdquo;</p>
               </blockquote>
 
               <figure class="mb-4 d-flex align-items-center justify-content-center">
                 <div><img src="images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>John Smith</p>
+                <p>Okunuga Aminat</p>
               </figure>
             </div>
           </div>
@@ -101,11 +99,11 @@
             <div class="testimonial">
 
               <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+                <p>&ldquo;Coming across SCA mentorship programme has been the best thing that has ever happened to me this year! Thank you SCA.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
                 <div><img src="images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>Christine Aguilar</p>
+                <p>Angelina Goodwill</p>
               </figure>
               
             </div>
@@ -115,28 +113,14 @@
             <div class="testimonial">
 
               <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+                <p>&ldquo;I am super excited that to have pased through the SCA. Thank you She Code Africa.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
                 <div><img src="images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>Robert Spears</p>
+                <p>Ikechuchwu Grace</p>
               </figure>
 
               
-            </div>
-          </div>
-
-          <div>
-            <div class="testimonial">
-
-              <blockquote class="mb-5">
-                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-              </blockquote>
-              <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_5.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                <p>Bruce Rogers</p>
-              </figure>
-
             </div>
           </div>
 
@@ -155,7 +139,7 @@
             <div class="unit-4 d-flex">
               <!-- <div class="unit-4-icon mr-4"><span class="text-primary icon-laptop2"></span></div> -->
               <div>
-                <h3>Teamwork, Community</h3>
+                <h3>Teamwork</h3>
                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p> -->
                 <div><img src="images/img/our_work.jpg" alt="Image" class="w-50 img-fluid mb-3"></div> 
                 <!-- <p><a href="#">Learn More</a></p> -->
@@ -258,9 +242,9 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
             <div class="person text-center">
               <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>John Rooster</h3>
-              <p class="position text-muted">Co-Founder, President</p>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <h3>Ada Nduka</h3>
+              <p class="position text-muted">Founder</p>
+              <p class="mb-4">Tech enthusiast.</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -272,9 +256,9 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
             <div class="person text-center">
               <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Tom Sharp</h3>
-              <p class="position text-muted">Co-Founder, COO</p>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <h3>Tolu Olawunmi</h3>
+              <p class="position text-muted">Community Leader</p>
+              <p class="mb-4">Tech Savvy.</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -286,9 +270,9 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person text-center">
               <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Winston Hodson</h3>
-              <p class="position text-muted">Marketing</p>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <h3>Tolu Olawunmi</h3>
+              <p class="position text-muted">Community Leader</p>
+              <p class="mb-4">Tech Savvy.</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
