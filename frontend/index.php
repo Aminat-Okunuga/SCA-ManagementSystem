@@ -64,7 +64,7 @@
                 </div>
               </div>
               <div class="col-12 mb-4">
-                <p class="lead">We help in empowering female in becoming a world-class technological person.</p>
+                <p class="lead">We are a non-profit organization focused on celebrating and empowering young Girls and Women in Technology across Africa.</p>
               </div>
              
             </div>
