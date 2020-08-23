@@ -241,7 +241,7 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
             <div class="person text-center">
-              <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <img src="images/img/ada_nduka.jpeg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
               <h3>Ada Nduka</h3>
               <p class="position text-muted">Founder</p>
               <p class="mb-4">Tech enthusiast.</p>
@@ -255,8 +255,8 @@
           </div>
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
             <div class="person text-center">
-              <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Tolu Olawunmi</h3>
+              <img src="images/img/ada_nduka.jpeg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3>Ada Nduka</h3>
               <p class="position text-muted">Community Leader</p>
               <p class="mb-4">Tech Savvy.</p>
               <ul class="ul-social-circle">
@@ -269,8 +269,8 @@
           </div>
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person text-center">
-              <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Tolu Olawunmi</h3>
+              <img src="images/img/ada_nduka.jpeg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3>Ada Nduka</h3>
               <p class="position text-muted">Community Leader</p>
               <p class="mb-4">Tech Savvy.</p>
               <ul class="ul-social-circle">
