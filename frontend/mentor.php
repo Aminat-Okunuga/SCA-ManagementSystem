@@ -49,7 +49,6 @@ try {
             <div class="row justify-content-center mb-4">
               <div class="col-md-8 text-center">
                 <h1>All Mentors</h1>
-                <!-- <p class="lead">She Code Africa&bullet; <em>by</em> James Smith</p> -->
                 <p class="lead">She Code Africa</p>
               </div>
             </div>
@@ -68,16 +67,18 @@ try {
         </div>
 
         <div class="row">
+          <?php
+          foreach($mentors as $mentor): ?>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="mentee.html"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
-              <h2 class="font-size-regular"><a href="mentee.html">Create Beautiful Website In Less Than An Hour</a></h2>
-              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-             <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              <p><a href="#">Continue Reading...</a></p> -->
+              <a href="mentee.html"><img src="images/<?= $mentor['picture']?>" alt="Image" class="img-fluid"></a>
+              <h2 class="font-size-regular"><a href="mentee.html"><?= $mentor['f_name']." ".$mentor['l_name'];?></a></h2>
+              <div class="meta mb-4"><?= $mentor['track_name']?> <span class="mx-2">&bullet;</span> <?=$mentor['cohort_name']?><span class="mx-2">&bullet;</span></div>
+              <p><a href="#">Read more...</a></p>
             </div> 
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <?php endforeach?>
+          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
               <a href="mentee.html"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="mentee.html">Create Beautiful Website In Less Than An Hour</a></h2>
@@ -86,15 +87,15 @@ try {
               <p><a href="#">Continue Reading...</a></p> -->
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
               <a href="mentee.html"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="mentee.html">Create Beautiful Website In Less Than An Hour</a></h2>
               <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
              <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
               <p><a href="#">Continue Reading...</a></p> -->
-            </div> 
-          </div>
+            <!-- </div>   -->
+          <!-- </div> --> 
           
         </div>
       </div>
