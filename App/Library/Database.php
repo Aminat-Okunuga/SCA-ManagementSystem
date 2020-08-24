@@ -5,8 +5,8 @@ namespace Library;
 class Database {
 
     public $host = 'db4free.net';
-    public $username = 'sca_mentorship';
-    public $password = 'AminatCanCode@sca';
+    public $username = "sca_mentorship" ;
+    public $password = "AminatCanCode@sca";
     public $db = 'sca_mentorship';
     public $conn;
     public $stmt;
