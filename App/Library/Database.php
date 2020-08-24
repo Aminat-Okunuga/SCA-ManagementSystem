@@ -4,10 +4,10 @@ namespace Library;
 
 class Database {
 
-    public $host = 'db4free.net';
-    public $username = "sca_mentorship" ;
-    public $password = "AminatCanCode@sca";
-    public $db = 'sca_mentorship';
+    public $host = 'us-cdbr-east-02.cleardb.com';
+    public $username = "bd31784ad05ad3" ;
+    public $password = "46ec65b1";
+    public $db = 'heroku_4cbca9ff79d91ad';
     public $conn;
     public $stmt;
     public $result;
