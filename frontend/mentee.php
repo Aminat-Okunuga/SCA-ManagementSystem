@@ -71,7 +71,7 @@ try {
           foreach($mentees as $mentee): ?>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="mentee.html"><img src="images/<?= $mentee['picture']?>" alt="Image" class="img-fluid"></a>
+              <a href="mentee.html"><img src="images/img/<?= $mentee['picture']?>" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="mentee.html"><?= $mentee['f_name']." ".$mentee['l_name'];?></a></h2>
               <div class="meta mb-4"><?= $mentee['track_name']?> <span class="mx-2">&bullet;</span> <?=$mentee['cohort_name']?><span class="mx-2">&bullet;</span></div>
               <p><a href="#">Read more...</a></p>

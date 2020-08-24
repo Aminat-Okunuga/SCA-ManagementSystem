@@ -71,7 +71,7 @@ try {
           foreach($mentors as $mentor): ?>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="mentee.html"><img src="images/<?= $mentor['picture']?>" alt="Image" class="img-fluid"></a>
+              <a href="mentee.html"><img src="images/img/<?= $mentor['picture']?>" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="mentee.html"><?= $mentor['f_name']." ".$mentor['l_name'];?></a></h2>
               <div class="meta mb-4"><?= $mentor['track_name']?> <span class="mx-2">&bullet;</span> <?=$mentor['cohort_name']?><span class="mx-2">&bullet;</span></div>
               <p><a href="#">Read more...</a></p>

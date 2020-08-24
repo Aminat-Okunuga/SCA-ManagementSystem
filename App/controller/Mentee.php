@@ -36,19 +36,11 @@ class Mentee
 
     }
 
-    // public static function getAll() {
-    //     $db = new Database();
-    //     $db->connect();
-
-    //     $mentees = $db->select("SELECT * FROM MENTEES ORDER BY ID DESC");
-    //     return $mentees;
-    // }
-
     public static function getAll() {
         $db = new Database();
         $db->connect();
 
-        $mentees = $db->select("SELECT MENTEES.*,  USERS.FNAME AS f_name, USERS.LNAME AS l_name, USERS.PICTURE AS picture, COHORTS.NAME AS cohort_name, TRACKS.NAME AS track_name FROM MENTEES JOIN USERS ON USERS.ID = MENTEES.ID JOIN COHORTS ON COHORTS.ID = MENTEES.COHORT_ID JOIN TRACKS ON TRACKS.ID = MENTEES.TRACK_ID ORDER BY MENTEES.ID DESC LIMIT 3");
+        $mentees = $db->select("SELECT MENTEES.*,  USERS.FNAME AS f_name, USERS.LNAME AS l_name, USERS.PICTURE AS picture, COHORTS.NAME AS cohort_name, TRACKS.NAME AS track_name FROM MENTEES JOIN USERS ON USERS.ID = MENTEES.MENTEE_ID JOIN COHORTS ON COHORTS.ID = MENTEES.COHORT_ID JOIN TRACKS ON TRACKS.ID = MENTEES.TRACK_ID ORDER BY MENTEES.MENTEE_ID DESC LIMIT 3");
         return $mentees;
     }
 
