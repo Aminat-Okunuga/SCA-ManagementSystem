@@ -4,10 +4,10 @@ namespace Library;
 
 class Database {
 
-    public $host = 'localhost';
-    public $username = 'root';
-    public $password = '';
-    public $db = 'sca_db';
+    public $host = 'db4free.net';
+    public $username = 'sca_mentorship';
+    public $password = 'AminatCanCode@sca';
+    public $db = 'sca_mentorship';
     public $conn;
     public $stmt;
     public $result;
