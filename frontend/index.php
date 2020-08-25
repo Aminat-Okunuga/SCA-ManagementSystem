@@ -1,4 +1,16 @@
-<?php include_once '../autoload.php';?>
+<?php include_once '../autoload.php';
+$mentees = $mentors = array();
+$error = false;
+
+try {
+  $mentees = Controller\Mentee::getAll();
+  $mentors = Controller\Mentor::getAll();
+} catch (\Exception $e) {
+    $error = $e->getMessage();
+    exit($error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,7 +102,7 @@
               </blockquote>
 
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="images/img/Aminat.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>Okunuga Aminat</p>
               </figure>
             </div>
@@ -102,7 +114,7 @@
                 <p>&ldquo;Coming across SCA mentorship programme has been the best thing that has ever happened to me this year! Thank you SCA.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="images/img/sca_person_2.jpeg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>Angelina Goodwill</p>
               </figure>
               
@@ -116,7 +128,7 @@
                 <p>&ldquo;I am super excited that to have pased through the SCA. Thank you She Code Africa.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="images/img/sca_person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>Ikechuchwu Grace</p>
               </figure>
 
@@ -221,10 +233,11 @@
               </ul>
             </div>
           </div>
+          <?php foreach($mentors as $mentor):?>
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
             <div class="person text-center">
-              <img src="images/img/ada_nduka.jpeg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Ada Nduka</h3>
+              <img src="images/img/<?=$mentor['picture']?>" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+              <h3><?=$mentor['fname']. " " . $mentor['lname']?></h3>
               <p class="position text-muted">Community Leader</p>
               <p class="mb-4">Tech Savvy.</p>
               <ul class="ul-social-circle">
@@ -262,16 +275,16 @@
         </div>
 
         <div class="row">
+        <?php foreach($mentees as $mentee):?>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <a href="mentee.html"><img src="images/img/Aminat.jpg" alt="Image" class="img-fluid"></a>
-              <h2 class="font-size-regular"><a href="mentee.html">PHP Beginner Track</a></h2>
-              <div class="meta mb-4">Aminat Okunuga <span class="mx-2">&bullet;</span> Cohort 2<span class="mx-2">&bullet;</span> <a href="#">Read more...</a></div>
-             <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              <p><a href="#">Continue Reading...</a></p> -->
+              <a href="mentee.html"><img src="images/img/<?= $mentee['picture']?>" alt="Image" class="img-fluid"></a>
+              <h2 class="font-size-regular"><a href="mentee.html"><?=$mentee['track_name']?></a></h2>
+              <div class="meta mb-4"><?=$mentee['fname'] ." ". $mentee['lname']?> <span class="mx-2">&bullet;</span> Cohort 2<span class="mx-2">&bullet;</span> <a href="#">Read more...</a></div>
             </div> 
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <?php endforeach?>
+          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
               <a href="mentee.html"><img src="images/img/Aminat.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="mentee.html">PHP Beginner Track</a></h2>
@@ -279,8 +292,8 @@
              <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
               <p><a href="#">Continue Reading...</a></p> -->
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <!-- </div> -->
+          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
               <a href="mentee.html"><img src="images/img/Aminat.jpg" alt="Image" class="img-fluid"></a>
               <h2 class="font-size-regular"><a href="mentee.html">PHP Beginner Track</a></h2>
@@ -288,8 +301,7 @@
              <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
               <p><a href="#">Continue Reading...</a></p> -->
             </div> 
-          </div>
-          
+          <!-- </div>  -->
         </div>
       </div>
     </section>
