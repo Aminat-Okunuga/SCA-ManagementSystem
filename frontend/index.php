@@ -52,12 +52,10 @@ try {
                 <div><a data-fancybox data-ratio="2" href="register.php" class="btn btn-primary btn-md">Register</a></div>
               </div>
             </div>
-
           </div> 
         </div>
       </div>
     </div>  
-
 
   <div class="site-section" id="about-section">
       <div class="container">
@@ -125,7 +123,7 @@ try {
             <div class="testimonial">
 
               <blockquote class="mb-5">
-                <p>&ldquo;I am super excited that to have pased through the SCA. Thank you She Code Africa.&rdquo;</p>
+                <p>&ldquo;I am super excited to have pased through the SCA. Thank you She Code Africa.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
                 <div><img src="images/img/sca_person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
@@ -149,68 +147,48 @@ try {
         <div class="row align-items-stretch">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
             <div class="unit-4 d-flex">
-              <!-- <div class="unit-4-icon mr-4"><span class="text-primary icon-laptop2"></span></div> -->
               <div>
                 <h3>Teamwork</h3>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p> -->
                 <div><img src="images/img/our_work.jpg" alt="Image" class="w-50 img-fluid mb-3"></div> 
-                <!-- <p><a href="#">Learn More</a></p> -->
-              </div>
+                </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="unit-4 d-flex">
-              <!-- <div class="unit-4-icon mr-4"><span class="text-primary icon-shopping_cart"></span></div> -->
               <div>
                 <h3>Technical Growth</h3>
                 <div><img src="images/img/our_work.jpg" alt="Image" class="w-50 img-fluid mb-3"></div> 
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p> -->
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4 d-flex">
-              <!-- <div class="unit-4-icon mr-4"><span class="text-primary icon-question_answer"></span></div> -->
               <div>
                 <h3>Visibility</h3>
                 <div><img src="images/img/our_work.jpg" alt="Image" class="w-50 img-fluid mb-3"></div> 
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p> -->
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4 d-flex">
-              <!-- <div class="unit-4-icon mr-4"><span class="text-primary icon-question_answer"></span></div> -->
               <div>
                 <h3>Leadership</h3>
                 <div><img src="images/img/our_work.jpg" alt="Image" class="w-50 img-fluid mb-3"></div> 
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p> -->
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4 d-flex">
-              <!-- <div class="unit-4-icon mr-4"><span class="text-primary icon-question_answer"></span></div> -->
-              <div>
+             <div>
                 <h3>Community</h3>
                 <div><img src="images/img/our_work.jpg" alt="Image" class="w-50 img-fluid mb-3"></div> 
-                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p> -->
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </section>
 
-   
-  
-    
     <div class="site-section border-bottom" id="team-section">
       <div class="container">
         <div class="row justify-content-center mb-5">
@@ -219,25 +197,11 @@ try {
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <div class="person text-center">
-              <img src="images/img/ada_nduka.jpeg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Ada Nduka</h3>
-              <p class="position text-muted">Founder</p>
-              <p class="mb-4">Tech enthusiast.</p>
-              <ul class="ul-social-circle">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
           <?php foreach($mentors as $mentor):?>
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
             <div class="person text-center">
               <img src="images/img/<?=$mentor['picture']?>" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3><?=$mentor['fname']. " " . $mentor['lname']?></h3>
+              <h3><?=$mentor['f_name']. " " . $mentor['l_name']?></h3>
               <p class="position text-muted">Community Leader</p>
               <p class="mb-4">Tech Savvy.</p>
               <ul class="ul-social-circle">
@@ -248,21 +212,8 @@ try {
               </ul>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
-            <div class="person text-center">
-              <img src="images/img/ada_nduka.jpeg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Ada Nduka</h3>
-              <p class="position text-muted">Community Leader</p>
-              <p class="mb-4">Tech Savvy.</p>
-              <ul class="ul-social-circle">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
+          <?php endforeach?>
           </div>
-        </div>
       </div>
     </div>
 
@@ -279,30 +230,12 @@ try {
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
               <a href="mentee.html"><img src="images/img/<?= $mentee['picture']?>" alt="Image" class="img-fluid"></a>
-              <h2 class="font-size-regular"><a href="mentee.html"><?=$mentee['track_name']?></a></h2>
-              <div class="meta mb-4"><?=$mentee['fname'] ." ". $mentee['lname']?> <span class="mx-2">&bullet;</span> Cohort 2<span class="mx-2">&bullet;</span> <a href="#">Read more...</a></div>
+              <h2 class="font-size-regular"><a href="mentee.html"><?=$mentee['f_name'] ." ". $mentee['l_name']?> </a></h2>
+              <div class="meta mb-4"><?=$mentee['track_name']?><span class="mx-2">&bullet;</span> Cohort 2<span class="mx-2">&bullet;</span> <a href="#">Read more...</a></div>
             </div> 
           </div>
           <?php endforeach?>
-          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <a href="mentee.html"><img src="images/img/Aminat.jpg" alt="Image" class="img-fluid"></a>
-              <h2 class="font-size-regular"><a href="mentee.html">PHP Beginner Track</a></h2>
-              <div class="meta mb-4">Aminat Okunuga <span class="mx-2">&bullet;</span> Cohort 2<span class="mx-2">&bullet;</span> <a href="#">Read more...</a></div>
-             <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              <p><a href="#">Continue Reading...</a></p> -->
-            </div>
-          <!-- </div> -->
-          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <a href="mentee.html"><img src="images/img/Aminat.jpg" alt="Image" class="img-fluid"></a>
-              <h2 class="font-size-regular"><a href="mentee.html">PHP Beginner Track</a></h2>
-              <div class="meta mb-4">Aminat Okunuga <span class="mx-2">&bullet;</span> Cohort 2<span class="mx-2">&bullet;</span> <a href="#">Read more...</a></div>
-             <!--  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              <p><a href="#">Continue Reading...</a></p> -->
-            </div> 
-          <!-- </div>  -->
-        </div>
+          </div>
       </div>
     </section>
     <a href="register.php" class="bg-primary py-5 d-block">
