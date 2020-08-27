@@ -48,7 +48,7 @@
                 <li><a href="index.php" class="nav-link">Home</a></li>
                 <li><a href="mentee.php" class="nav-link">Mentee</a></li>
                 <li><a href="mentor.php" class="nav-link">Mentor</a></li>
-                <li><a href="#" class="nav-link">Signup</a></li>
+                <li><a href="register.php" class="nav-link">Signup</a></li>
                 <li><a href="#" class="nav-link">Login</a></li>
               </ul>
             </nav>
