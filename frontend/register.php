@@ -40,13 +40,13 @@ include_once './process.php';
                         <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="username">Username *</label>
-                                    <input type="text" class="form-control" id="username">
+                                    <input type="text" name="username" class="form-control" id="username">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="fname">First Name *</label>
-                                    <input type="text" class="form-control" id="fname">
+                                    <input type="text" name="fname" class="form-control" id="fname">
                                 </div>
                             </div>
                         </div>
@@ -55,13 +55,13 @@ include_once './process.php';
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="name">Last Name *</label>
-                                <input type="text" class="form-control" id="lname">
+                                <input type="text" name="lname" class="form-control" id="lname">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" name="email" class="form-control" id="email">
                             </div>
                         </div>
                     </div>
@@ -69,13 +69,13 @@ include_once './process.php';
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="name">Password *</label>
-                                <input type="password" class="form-control" id="name">
+                                <input type="password" name="password" class="form-control" id="password">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="name">Role *</label>
-                                <select name="user_type" id="user_type" class="form-control">
+                                <label for="role">Role *</label>
+                                <select name="type" name="role" id="type" class="form-control">
                                     <option value="">Select Role</option>    
                                     <option value="mentor">Mentor</option>
                                     <option value="mentee">Mentee</option>
