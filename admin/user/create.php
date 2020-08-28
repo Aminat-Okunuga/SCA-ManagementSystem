@@ -10,7 +10,7 @@ include_once './process.php';
 <h3>Create User</h3>
 <div class="container">
     <div>
-        <form action="../user/create.php" method="post">
+        <form action="../user/create.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="username">Username:</label>
                 <input type="text" name="username">

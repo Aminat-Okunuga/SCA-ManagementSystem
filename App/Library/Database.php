@@ -4,15 +4,15 @@ namespace Library;
 
 class Database {
 
-    public $host = 'us-cdbr-east-02.cleardb.com';
-    public $username = "bd31784ad05ad3" ;
-    public $password = "46ec65b1";
-    public $db = 'heroku_4cbca9ff79d91ad';
+    // public $host = 'us-cdbr-east-02.cleardb.com';
+    // public $username = "bd31784ad05ad3" ;
+    // public $password = "46ec65b1";
+    // public $db = 'heroku_4cbca9ff79d91ad';
 
-    // public $host = 'localhost';
-    // public $username = "root" ;
-    // public $password = "";
-    // public $db = 'sca_db';
+    public $host = 'localhost';
+    public $username = "root" ;
+    public $password = "";
+    public $db = 'sca_db';
     public $conn;
     public $stmt;
     public $result;

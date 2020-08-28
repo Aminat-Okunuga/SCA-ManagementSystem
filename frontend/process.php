@@ -9,7 +9,7 @@ try {
     $error = "";
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        if (!isset($_POST['create_user']) && $error == null) {
+        if (!isset($_POST['register']) && $error == null) {
             throw new \Exception("Invalid request format,. please try again");
         }
         if(!isset($_FILES['picture'])) {
@@ -89,7 +89,7 @@ try {
         if ($result !== true) {
             throw new \Exception("User creation failed");
         }
-        $message = "User created successfully";
+        $message = "Registration Successfully";
         echo $message;
 
     }
