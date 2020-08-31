@@ -53,7 +53,7 @@
                                 <h4 class="card-title">Mentors</h4>
                                 <div class="text-right">
                                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> 20</h2>
-                                    <span class="text-muted">Total Mentors</span>
+                                    <span class="text-muted"><a href="view-mentors.php">Total Mentors</a></span>
                                 </div>
                                 <span class="text-success">80%</span>
                                 <div class="progress">
@@ -70,7 +70,7 @@
                                 <h4 class="card-title">Mentees</h4>
                                 <div class="text-right">
                                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
-                                    <span class="text-muted">Total Mentees</span>
+                                    <span class="text-muted"><a href="view-mentees.php">Total Mentees</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
                                 <div class="progress">
@@ -85,7 +85,7 @@
                                 <h4 class="card-title">Comments</h4>
                                 <div class="text-right">
                                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
-                                    <span class="text-muted">Total Comments</span>
+                                    <span class="text-muted"><a href="view-comments.php">Total Comments</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
                                 <div class="progress">
@@ -105,7 +105,7 @@
                                 <h4 class="card-title">Tracks</h4>
                                 <div class="text-right">
                                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
-                                    <span class="text-muted">Total Track</span>
+                                    <span class="text-muted"><a href="view-tracks.php">Total Track</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
                                 <div class="progress">
@@ -120,7 +120,7 @@
                                 <h4 class="card-title">Cohorts</h4>
                                 <div class="text-right">
                                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
-                                    <span class="text-muted">Total Cohort</span>
+                                    <span class="text-muted"><a href="view-cohorts.php">Total Cohort</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
                                 <div class="progress">

@@ -1,46 +1,41 @@
-<?php
+<?php 
 include_once '../../../autoload.php';
 include_once '../components/header.php';
+include_once './process_edit_cohort.php';
+
+use \Library\Form as Form;
+use \Library\Validator as Validator;
 $comments = array();
 $error = false;
-
-try {
-  $comments = Controller\Comment::getAll();
-} catch (\Exception $e) {
-    $error = $e->getMessage();
-    exit($error);
+try{
+$comment_id = isset($_GET['comment_id']) ? Form::sanitise($_GET['comment_id']) :null;
+$commentError = Validator::validateNumber('Comment', $comment_id);
+if ($commentError !=null){
+    throw new \Exception($commentError);
 }
-?>
 
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <?php include'../components/sidebar.php';?>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+    $comment = Controller\Comment::get($comment_id);
+    if($comment == null) {
+        throw new \Exception("Comment does not exist");
+    }
+
+}catch(\Exception $e){
+    $error = $e->getMessage();
+}
+
+include_once '../components/sidebar.php';?>
+        
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Cohort</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Comments</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                            <li class="breadcrumb-item active">Comments</li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="view-comments.php">All Comments</a></li>
+                            <li class="breadcrumb-item active">Comment</li>
                         </ol>
-                    </div>
+                    </div>                
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -53,34 +48,28 @@ try {
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Comments</h4>
+                                <h4 class="card-title">Comment</h4>
                                 <h6 class="card-subtitle">All Comments</h6>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                    <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Status</th>
-                                                <th>Date</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                            $id = 0;
-                                            foreach($comments as $comment): ?>
+                                <div >
+                                <form action="../view/edit-comment.php?comment_id=<?= $comment_id?>" method="POST">
+                                    <div>
+                                    <label for="name">Name:</label>
+                                    <input type="text" name="name" value="<?= $comment['name'];?>">
+                                    </div>
+                                    <div>
+                                        <label for="status">Status</label>
+                                        <select name="status" id="status">
+                                            <option value="">Select a status</option>
+                                            <option <?= $cohort['status'] == 1 ? 'selected' : '' ?> value="1">Active</option>
+                                            <option <?= $cohort['status'] == 2 ? 'selected' : '' ?> value="2">Inactive</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="comment_id" id="comment_id" value="<?= $comment_id ?>">
+                                    <div>
+                                        <input type="submit" name="edit_comment" value="Edit">
+                                    </div>
 
-                                                <tr>
-                                                    <td><?= ++$id;?></td>
-                                                    <td><?= $comment['description']?></td>
-                                                    <td><?= $comment['status']?></td>
-                                                    <td><?= $comment['date_created']?></td>
-                                                    <td><button  class="btn hidden-sm-down btn-info"><a href="edit-comment.php?comment_id=<?= $comment['id']?>" style = "color:#fff">Edit</a></button></td>
-                                                </tr>
-                                            <?php endforeach ?>
-                                        </tbody>
-                                    </table>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +85,7 @@ try {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include'../components/footer.php';?>
+            <?php include_once '../components/footer.php';?>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
