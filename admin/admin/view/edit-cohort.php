@@ -1,7 +1,7 @@
 <?php 
+include_once '../../../autoload.php';
 include_once '../components/header.php';
-include_once '../../autoload.php';
-include_once './process_edit.php';
+include_once './process_edit_cohort.php';
 
 use \Library\Form as Form;
 use \Library\Validator as Validator;
@@ -31,7 +31,8 @@ include_once '../components/sidebar.php';?>
                     <div class="col-md-6 col-8 align-self-center">
                         <h3 class="text-themecolor m-b-0 m-t-0">Cohort</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="view-cohorts.php">All Cohorts</a></li>
                             <li class="breadcrumb-item active">Cohort</li>
                         </ol>
                     </div>                
@@ -50,7 +51,7 @@ include_once '../components/sidebar.php';?>
                                 <h4 class="card-title">Cohorts</h4>
                                 <h6 class="card-subtitle">All Cohorts</h6>
                                 <div >
-                                <form action="../cohort/edit.php?cohort_id=<?= $cohort_id?>" method="POST">
+                                <form action="../view/edit-cohort.php?cohort_id=<?= $cohort_id?>" method="POST">
                                     <div>
                                     <label for="name">Name:</label>
                                     <input type="text" name="name" value="<?= $cohort['name'];?>">
