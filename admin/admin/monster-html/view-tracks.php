@@ -1,4 +1,16 @@
-<?php include'../components/header.php';?>
+<?php
+include_once '../../../autoload.php';
+include_once '../components/header.php';
+$tracks = array();
+$error = false;
+
+try {
+  $tracks = Controller\Track::getAll();
+} catch (\Exception $e) {
+    $error = $e->getMessage();
+    exit($error);
+}
+?>
 
         <!-- ============================================================== -->
         <!-- End Topbar header -->
@@ -44,59 +56,29 @@
                                 <h4 class="card-title">Tracks</h4>
                                 <h6 class="card-subtitle">All Tracks</h6>
                                 <div class="table-responsive">
-                                <table class="table">
-                                        <thead>
+                                    <table class="table">
+                                    <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Action</th>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
+                                        <?php
+                                            $id = 0;
+                                            foreach($tracks as $track): ?>
+
+                                                <tr>
+                                                    <td><?= ++$id;?></td>
+                                                    <td><?= $track['name']?></td>
+                                                    <td><?= $track['status']?></td>
+                                                    <td><?= $track['date_created']?></td>
+                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit.php?track_id=<?= $track['id']?>">Edit</a></button></td>
+                                                </tr>
+                                            <?php endforeach ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -114,7 +96,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include'../components/header.php';?>
+            <?php include'../components/footer.php';?>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

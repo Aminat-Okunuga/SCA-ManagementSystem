@@ -1,4 +1,16 @@
-<?php include_once '../components/header.php';?>
+<?php
+include_once '../../../autoload.php';
+include_once '../components/header.php';
+$mentors = array();
+$error = false;
+
+try {
+  $mentors = Controller\Mentor::getAll();
+} catch (\Exception $e) {
+    $error = $e->getMessage();
+    exit($error);
+}
+?>
 
         <!-- ============================================================== -->
         <!-- End Topbar header -->
@@ -47,56 +59,31 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Action</th>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Cohort</th>
+                                                <th>Track</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>Rogahn</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>Rogahn</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>Rogahn</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>Rogahn</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
+                                        <?php
+                                            $id = 0;
+                                            foreach($mentors as $mentor): ?>
+
+                                                <tr>
+                                                    <td><?= ++$id;?></td>
+                                <!--                    <td>--><?//= $mentor['name']?><!--</td>-->
+                                                    <td><?= $mentor['f_name'] . " ".$mentor['l_name']?></td>
+                                                    <td><?= $mentor['cohort_id']?></td>
+                                                    <td><?= $mentor['track_id']?></td>
+                                                    <td><?= $mentor['status']?></td>
+                                                    <td><?= $mentor['date_created']?></td>
+                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit.php?mentor_id=<?= $mentor['id']?>">Edit</a></button></td>
+                                                </tr>
+                                            <?php endforeach ?>
                                         </tbody>
                                     </table>
                                 </div>

@@ -1,4 +1,17 @@
-<?php include '../components/header.php'?>
+<?php
+include_once '../../../autoload.php';
+include_once '../components/header.php';
+$mentees = array();
+$error = false;
+
+try {
+  $mentees = Controller\Mentee::getAll();
+} catch (\Exception $e) {
+    $error = $e->getMessage();
+    exit($error);
+}
+?>
+
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
@@ -44,58 +57,33 @@
                                 <h6 class="card-subtitle">All Mentees</h6>
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <thead>
+                                    <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Action</th>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Cohort</th>
+                                                <th>Track</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
+                                        <?php
+                                            $id = 0;
+                                            foreach($mentees as $mentee): ?>
+
+                                                <tr>
+                                                    <td><?= ++$id;?></td>
+                                <!--                    <td>--><?//= $mentee['name']?><!--</td>-->
+                                                    <td><?= $mentee['f_name'] . " ".$mentee['l_name']?></td>
+                                                    <td><?= $mentee['cohort_id']?></td>
+                                                    <td><?= $mentee['track_id']?></td>
+                                                    <td><?= $mentee['status']?></td>
+                                                    <td><?= $mentee['date_created']?></td>
+                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit.php?mentee_id=<?= $mentee['id']?>">Edit</a></button></td>
+                                                </tr>
+                                            <?php endforeach ?>
                                         </tbody>
                                     </table>
                                 </div>

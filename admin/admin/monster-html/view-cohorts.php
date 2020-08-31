@@ -1,12 +1,38 @@
-<?php 
+<?php
+include_once '../../../autoload.php';
 include_once '../components/header.php';
+$cohorts = array();
+$error = false;
+
+try {
+  $cohorts = Controller\Cohort::getAll();
+} catch (\Exception $e) {
+    $error = $e->getMessage();
+    exit($error);
+}
 ?>
 
-       
-        <?php include_once '../components/sidebar.php';?>
-        
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <?php include'../components/sidebar.php';?>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
         <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
             <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
                         <h3 class="text-themecolor m-b-0 m-t-0">Cohort</h3>
@@ -14,7 +40,7 @@ include_once '../components/header.php';
                             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                             <li class="breadcrumb-item active">Cohort</li>
                         </ol>
-                    </div>                
+                    </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -30,59 +56,29 @@ include_once '../components/header.php';
                                 <h4 class="card-title">Cohorts</h4>
                                 <h6 class="card-subtitle">All Cohorts</h6>
                                 <div class="table-responsive">
-                                <table class="table">
-                                        <thead>
+                                    <table class="table">
+                                    <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Action</th>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td><a href="edit-cohort.php" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td><a href="#" class="btn hidden-sm-down btn-success">Edit </a></td>
-                                            </tr>
+                                        <?php
+                                            $id = 0;
+                                            foreach($cohorts as $cohort): ?>
+
+                                                <tr>
+                                                    <td><?= ++$id;?></td>
+                                                    <td><?= $cohort['name']?></td>
+                                                    <td><?= $cohort['status']?></td>
+                                                    <td><?= $cohort['date_created']?></td>
+                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit.php?cohort_id=<?= $cohort['id']?>">Edit</a></button></td>
+                                                </tr>
+                                            <?php endforeach ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -100,7 +96,7 @@ include_once '../components/header.php';
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include_once '../components/footer.php';?>
+            <?php include'../components/footer.php';?>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
