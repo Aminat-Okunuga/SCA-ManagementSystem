@@ -81,7 +81,7 @@ try {
                                                     <td><?= $mentor['track_id']?></td>
                                                     <td><?= $mentor['status']?></td>
                                                     <td><?= $mentor['date_created']?></td>
-                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit.php?mentor_id=<?= $mentor['id']?>">Edit</a></button></td>
+                                                    <td><button  class="btn hidden-sm-down btn-info"><a href="edit-mentor.php?mentor_id=<?= $mentor['id']?>" style = "color:#fff">Edit</a></button></td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>

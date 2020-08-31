@@ -81,7 +81,7 @@ try {
                                                     <td><?= $mentee['track_id']?></td>
                                                     <td><?= $mentee['status']?></td>
                                                     <td><?= $mentee['date_created']?></td>
-                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit.php?mentee_id=<?= $mentee['id']?>">Edit</a></button></td>
+                                                    <td><button  class="btn hidden-sm-down btn-info"><a href="edit-mentee.php?mentee_id=<?= $mentee['id']?>" style = "color:#fff">Edit</a></button></td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>

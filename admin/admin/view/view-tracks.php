@@ -76,7 +76,7 @@ try {
                                                     <td><?= $track['name']?></td>
                                                     <td><?= $track['status']?></td>
                                                     <td><?= $track['date_created']?></td>
-                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit-track.php?track_id=<?= $track['id']?>">Edit</a></button></td>
+                                                    <td><button  class="btn hidden-sm-down btn-info"><a href="edit-track.php?track_id=<?= $track['id']?>" style = "color:#fff">Edit</a></button></td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>

@@ -76,7 +76,7 @@ try {
                                                     <td><?= $cohort['name']?></td>
                                                     <td><?= $cohort['status']?></td>
                                                     <td><?= $cohort['date_created']?></td>
-                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit-cohort.php?cohort_id=<?= $cohort['id']?>">Edit</a></button></td>
+                                                    <td><button  class="btn hidden-sm-down btn-info"><a href="edit-cohort.php?cohort_id=<?= $cohort['id']?>" style = "color:#fff">Edit</a></button></td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>
