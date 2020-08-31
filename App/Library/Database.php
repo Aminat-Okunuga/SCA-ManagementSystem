@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace Library;
 
 class Database {
