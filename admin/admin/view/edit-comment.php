@@ -54,7 +54,7 @@ include_once '../components/sidebar.php';?>
                                 <form action="../view/edit-comment.php?comment_id=<?= $comment_id?>" method="POST">
                                     <div>
                                     <label for="name">Name:</label>
-                                    <input type="text" name="name" value="<?= $comment['name'];?>">
+                                    <input type="text" name="name" value="<?= $comment['description'];?>">
                                     </div>
                                     <div>
                                         <label for="status">Status</label>
