@@ -1,46 +1,41 @@
-<?php
+<?php 
 include_once '../../../autoload.php';
 include_once '../components/header.php';
-$tracks = array();
+include_once './process_edit_track.php';
+
+use \Library\Form as Form;
+use \Library\Validator as Validator;
+$track = array();
 $error = false;
-
-try {
-  $tracks = Controller\Track::getAll();
-} catch (\Exception $e) {
-    $error = $e->getMessage();
-    exit($error);
+try{
+$track_id = isset($_GET['track_id']) ? Form::sanitise($_GET['track_id']) :null;
+$trackError = Validator::validateNumber('Track', $track_id);
+if ($trackError !=null){
+    throw new \Exception($trackError);
 }
-?>
 
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <?php include'../components/sidebar.php';?>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+    $track = Controller\Track::get($track_id);
+    if($track == null) {
+        throw new \Exception("Track does not exist");
+    }
+
+}catch(\Exception $e){
+    $error = $e->getMessage();
+}
+
+include_once '../components/sidebar.php';?>
+        
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
                         <h3 class="text-themecolor m-b-0 m-t-0">Track</h3>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="view-tracks.php">All Tracks</a></li>
                             <li class="breadcrumb-item active">Track</li>
                         </ol>
-                    </div>
+                    </div>                
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -53,34 +48,28 @@ try {
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Tracks</h4>
-                                <h6 class="card-subtitle">All Tracks</h6>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                    <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Status</th>
-                                                <th>Date</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                            $id = 0;
-                                            foreach($tracks as $track): ?>
+                                <h4 class="card-title">Tacks</h4>
+                                <h6 class="card-subtitle">All tracks</h6>
+                                <div >
+                                <form action="../view/edit-track.php?track_id=<?= $track_id?>" method="POST">
+                                    <div>
+                                    <label for="name">Name:</label>
+                                    <input type="text" name="name" value="<?= $track['name'];?>">
+                                    </div>
+                                    <div>
+                                        <label for="status">Status</label>
+                                        <select name="status" id="status">
+                                            <option value="">Select a status</option>
+                                            <option <?= $track['status'] == 1 ? 'selected' : '' ?> value="1">Active</option>
+                                            <option <?= $track['status'] == 2 ? 'selected' : '' ?> value="2">Inactive</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="track_id" id="track_id" value="<?= $track_id ?>">
+                                    <div>
+                                        <input type="submit" name="edit_track" value="Edit">
+                                    </div>
 
-                                                <tr>
-                                                    <td><?= ++$id;?></td>
-                                                    <td><?= $track['name']?></td>
-                                                    <td><?= $track['status']?></td>
-                                                    <td><?= $track['date_created']?></td>
-                                                    <td><button  class="btn hidden-sm-down btn-success"><a href="edit-track.php?track_id=<?= $track['id']?>">Edit</a></button></td>
-                                                </tr>
-                                            <?php endforeach ?>
-                                        </tbody>
-                                    </table>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +85,7 @@ try {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include'../components/footer.php';?>
+            <?php include_once '../components/footer.php';?>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
