@@ -1,5 +1,25 @@
-<?php include '../components/header.php';?>
+<?php 
+include_once '../../../autoload.php';
+include '../components/header.php';
 
+use \Library\Form as Form;
+use \Library\Validator as Validator;
+$comments = $cohorts = $mentors =$mentees = $tracks = array();
+$error = false;
+try{
+    $comments = Controller\Comment::getAll();
+    $mentees = Controller\Mentee::getAll();
+    $mentors = Controller\Mentor::getAll();
+    $tracks = Controller\Track::getAll();
+    $cohorts = Controller\Cohort::getAll();
+} catch (\Exception $e) {
+    $error = $e->getMessage();
+    exit($error);
+}
+
+?>
+
+<!-- <?= count($cohorts);?> -->
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
@@ -52,7 +72,7 @@
                             <div class="card-block">
                                 <h4 class="card-title">Mentors</h4>
                                 <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> 20</h2>
+                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i><?= count($mentors)?></h2>
                                     <span class="text-muted"><a href="view-mentors.php">Total Mentors</a></span>
                                 </div>
                                 <span class="text-success">80%</span>
@@ -69,7 +89,7 @@
                             <div class="card-block">
                                 <h4 class="card-title">Mentees</h4>
                                 <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
+                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> <?= count($mentees)?></h2>
                                     <span class="text-muted"><a href="view-mentees.php">Total Mentees</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
@@ -84,7 +104,7 @@
                             <div class="card-block">
                                 <h4 class="card-title">Comments</h4>
                                 <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
+                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> <?= count($comments)?></h2>
                                     <span class="text-muted"><a href="view-comments.php">Total Comments</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
@@ -104,7 +124,7 @@
                             <div class="card-block">
                                 <h4 class="card-title">Tracks</h4>
                                 <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
+                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> <?= count($tracks)?></h2>
                                     <span class="text-muted"><a href="view-tracks.php">Total Track</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
@@ -119,7 +139,7 @@
                             <div class="card-block">
                                 <h4 class="card-title">Cohorts</h4>
                                 <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 35</h2>
+                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> <?= count($cohorts)?></h2>
                                     <span class="text-muted"><a href="view-cohorts.php">Total Cohort</a></span>
                                 </div>
                                 <span class="text-info">90%</span>
