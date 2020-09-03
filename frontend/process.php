@@ -87,8 +87,9 @@ try {
         $result = controller\User::create($user);
 
         if ($result !== true) {
-            throw new \Exception("User creation failed");
+            throw new \Exception("Registration failed");
         }
+        header("Location: login.php");
         $message = "Registration Successfully";
         echo $message;
 
