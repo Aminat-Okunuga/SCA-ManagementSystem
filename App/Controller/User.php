@@ -28,6 +28,24 @@ class User
 
     }
 
+    public static function login(\Entity\User $user)
+    {
+        $db = new Database();
+        $db->connect();
+
+        $fname = strtolower($user->fname);
+//check if user name exists
+        $db->prepare("SELECT id FROM USERS WHERE LOWER(fname) = ?");
+        $db->result = $db->stmt->bind_param("s", $fname);
+        $db->execute();
+
+        $result = $db->stmt->get_result();
+        if ($result->num_rows > 0) {
+           return $result;
+        }
+        return $result;
+    }
+
     public static function getAll() {
         $db = new Database();
         $db->connect();

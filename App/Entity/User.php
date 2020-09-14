@@ -30,6 +30,14 @@ class User
         $this->picture = $picture;
     }
 
+    public function getUserId() {
+        return $this->user_id;
+    }
+
+    public function setUserId($fname) {
+        $this->user_id = $user_id;
+    }
+
     public function getFName() {
         return $this->fname;
     }

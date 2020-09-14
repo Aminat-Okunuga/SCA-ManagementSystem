@@ -32,8 +32,8 @@ try {
         }
         
 
-        $user = new Entity\User($username, $password, $email);
-        $result = controller\User::login($user);
+        $users = new Entity\Users($username, $password, $email);
+        $result = controller\Users::login($users);
 
         if ($result !== true) {
             throw new \Exception("login failed");
